@@ -30,11 +30,11 @@ stages:
 #    nonErpDestinations:
 #      - ''
 
-#  productionDeployment:
-#    cfTargets:
-#      - org: 'org'
-#        space: 'Productive'
-#        apiEndpoint: 'https://'
-#        appName: 'appName'
-#        manifest: 'manifest.yml'
-#        credentialsId: 'credentialsId'
+  productionDeployment:
+    cfTargets:
+      - org: 'TechEd2018_CNA365-TechEd2018'
+        space: 'teched-demo'
+        apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+        appName: 'firstapp'
+        manifest: 'manifest.yml'
+        credentialsId: 'cf-deploy'
