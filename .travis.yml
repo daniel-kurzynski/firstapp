@@ -1,0 +1,6 @@
+language: minimal
+
+services:
+  - docker
+
+script: docker run -v //var/run/docker.sock:/var/run/docker.sock -v $(pwd):/workspace kurzy/jenkins-runner:latest
