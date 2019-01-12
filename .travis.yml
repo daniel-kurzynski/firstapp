@@ -3,5 +3,12 @@ language: minimal
 services:
   - docker
 
+before_script:
+  - git clone https://github.com/SAP/cloud-s4-sdk-book.git -b mock-server mock-server
+  - cd mock-server
+  - docker build --build-arg API_KEY=$API_KEY --tag mock-server .
+  - cd .. && rm -rf mock-server
+  - docker run -p 8080:8080 mock-server
+
 
 script: docker run -v //var/run/docker.sock:/var/run/docker.sock -v $(pwd):/workspace -e CASC_JENKINS_CONFIG=/workspace/configuration/jenkins.yml kurzy/jenkins-runner:latest
