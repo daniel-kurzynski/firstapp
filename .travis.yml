@@ -3,4 +3,5 @@ language: minimal
 services:
   - docker
 
+
 script: docker run -v //var/run/docker.sock:/var/run/docker.sock -v $(pwd):/workspace -e CASC_JENKINS_CONFIG=/workspace/configuration/jenkins.yml kurzy/jenkins-runner:latest
