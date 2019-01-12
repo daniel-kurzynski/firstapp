@@ -8,7 +8,7 @@ before_script:
   - cd mock-server
   - docker build --build-arg API_KEY=$API_KEY --tag mock-server .
   - cd .. && rm -rf mock-server
-  - docker run -p 8080:8080 mock-server
+  - docker run -d -p 8080:8080 mock-server
   - hostname -s
 
 
